@@ -1,7 +1,12 @@
 from abc import ABC, abstractmethod
 import os
+import ssl
 import tempfile
 import urllib.request
+
+
+ssl._create_default_https_context = ssl._create_unverified_context
+
 
 class IConverter(ABC):
     @abstractmethod
